@@ -1,9 +1,11 @@
 <div class="container">
 <h1>Lists</h1>
 
-<% @list.each do |l| %>
+<% @lists.each do |list| %>
 <ul>
-  <li><%= l.name %></li>
+  <%= link_to list_path(list) do %>
+  <li><%= list.name %></li>
+  <% end %>
 </ul>
 <% end %>
 

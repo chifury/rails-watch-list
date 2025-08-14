@@ -1,13 +1,12 @@
 class ListsController < ApplicationController
 
   def index
-    @list = List.all
+    @lists = List.all
     @movies = Movie.all
   end
 
   def show
     @list = List.find(params[:id])
-    # @movies = @list.movies
   end
 
   def new
