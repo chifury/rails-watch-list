@@ -1,0 +1,12 @@
+<div class="container">
+<h1>Lists</h1>
+
+<% @list.each do |l| %>
+<ul>
+  <li><%= l.name %></li>
+</ul>
+<% end %>
+
+<%= link_to "Create Watchlist", new_list_path, class: "btn btn-primary mt-4"  %>
+
+</div>

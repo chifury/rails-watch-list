@@ -1,0 +1,5 @@
+<div class="container">
+  <h1><%= @list.name%> watchlist</h1>
+  <% @list %>
+  <%= link_to "Add Movies", new_list_bookmark_path(@list), class: "btn btn-primary mt-4"  %>
+</div>
