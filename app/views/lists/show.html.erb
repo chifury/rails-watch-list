@@ -1,8 +1,16 @@
 <div class="container">
-  <h1><%= @list.name%> watchlist</h1>
+  <h1>watchlist</h1>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://image.pollinations.ai/prompt/<%= @list.name %>-movie);">
+    <div class="container">
+      <h1><%= @list.name%></h1>
+      <p>This is such an awesome movie list 🥳. You're so amazing! Well done.</p>
+      <%= link_to "Add Bookmarks", new_list_bookmark_path(@list), class: "btn btn-success mt-1 mb-5"  %>
+      <%= link_to "Return Home", root_path, class: "btn btn-secondary mt-1 mb-5" %>
+    </div>
+  </div>
 
   <% @list.bookmarks.each do |bookmark| %>
-      <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.rating %>
+      <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.rating, class: "mt-5"%>
 
       <h3 class="text-primary fw-bold"><%= bookmark.movie.title %><h3>
       <p><%= bookmark.movie.overview %></p>
@@ -15,11 +23,5 @@
       <% end %>
     </div>
   <% end %>
-
-  <div>
-    <%= link_to "Add Bookmarks", new_list_bookmark_path(@list), class: "btn btn-success mt-1 mb-5"  %>
-    <%= link_to "Return Home", root_path, class: "btn btn-secondary mt-1 mb-5"  %>
-
-  </div>
 
 </div>
