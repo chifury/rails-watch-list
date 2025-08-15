@@ -1,6 +1,6 @@
 <div class="container">
   <h1>watchlist</h1>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://image.pollinations.ai/prompt/<%= @list.name %>-movie);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>);">
     <div class="container">
       <h1><%= @list.name%></h1>
       <p>This is such an awesome movie list 🥳. You're so amazing! Well done.</p>
